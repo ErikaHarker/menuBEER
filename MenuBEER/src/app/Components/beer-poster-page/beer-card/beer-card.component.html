@@ -1,0 +1,13 @@
+<div class="btn" data-container="body" data-toggle="popover">
+    <div class="card border-primary mb-3" style="max-width: 20rem;">
+        <div class="form-group">
+            <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beerSelect">
+              <option *ngFor="let b of beers">{{b.name}}</option>
+            </select>
+            <p>Click on image to update</p>
+          </div>
+        <div class="card-body">
+            <img src="{{imageName}}" style="max-width:100%;width:auto;height:auto;" (click)="onClickBeerImage()">
+        </div>
+      </div>
+</div>

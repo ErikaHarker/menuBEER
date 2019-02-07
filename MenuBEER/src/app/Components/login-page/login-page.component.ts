@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'angular2-flash-messages';
 
 @Component({
   selector: 'app-login-page',
@@ -6,10 +8,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login-page.component.css']
 })
 export class LoginPageComponent implements OnInit {
+  public email: string;
+  public password: string;
 
-  constructor() { }
+  constructor(
+    public router: Router,
+    public flashMessage: FlashMessagesService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  onSubmitLogin(event){
+    event.preventDefault();
+
+    let user = {
+      username: this.email,
+      password: this.password,
+    };
+    this.router.navigate(['/BeerPoster']);
   }
 
 }

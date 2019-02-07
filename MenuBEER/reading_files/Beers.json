@@ -1,0 +1,33 @@
+{
+    "beers":
+    [
+        {
+            "name": "Poker",
+            "price": "1000"
+        },
+        {
+            "name": "Aguila",
+            "price": "1500"
+        },
+        {
+            "name": "ClubColombia",
+            "price": "1000"
+        },
+        {
+            "name": "BBC",
+            "price": "1500"
+        },
+        {
+            "name": "Corona",
+            "price": "1000"
+        },
+        {
+            "name": "Heineken",
+            "price": "1500"
+        },
+        {
+            "name": "Sol",
+            "price": "1500"
+        }
+    ]
+}
