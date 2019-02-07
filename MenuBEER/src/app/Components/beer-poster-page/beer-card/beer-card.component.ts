@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataBeerService} from '../../../Services/data-beer.service';
 import { Beer } from '../../../Serializers/Beer';
 import { BeerPosterPageComponent } from '../beer-poster-page.component';
@@ -11,9 +11,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./beer-card.component.css']
 })
 export class BeerCardComponent implements OnInit {
-  public beers: Beer[] = [];
+ 
   public imageName: any;
-  public beerSelect: string;
+  @Input() beerName: string;
 
   constructor(
     private dataBeerService : DataBeerService,
@@ -22,16 +22,11 @@ export class BeerCardComponent implements OnInit {
   }
 
   ngOnInit() {
-    let b = this.dataBeerService.getJSON();
-    b.forEach(element => {
-      this.beers.push(element);
-    });
-    this.beerSelect = this.beers[0].name;
-    this.imageName = "./assets/images/Beers/"+this.beerSelect+".jpg";
+    this.imageName = "./assets/images/Beers/"+this.beerName+".jpg";
   }
 
   onClickBeerImage(){
-    this.imageName = "./assets/images/Beers/"+this.beerSelect+".jpg";
+    this.imageName = "./assets/images/Beers/"+this.beerName+".jpg";
   }
 
 

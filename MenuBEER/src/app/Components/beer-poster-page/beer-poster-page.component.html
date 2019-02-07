@@ -1,18 +1,142 @@
 <div class="row ">
-    <div class="col-md-7 mx-auto mt-2">
+  <div class="alert alert-dismissible alert-info" *ngIf="waitRes">
+    <strong>Waiting</strong> <a class="alert-link">Waiting for a response from the server</a>
+  </div>
+  <div class="alert alert-dismissible alert-primary" *ngIf="messageErrorPopup">
+    <strong>Oh snap!</strong> <a  class="alert-link">Change a few things up</a> and try submitting again.
+  </div>
+  <div class="alert alert-dismissible alert-success" *ngIf="messageSavePopup">
+    <strong>Data save!</strong> <a  class="alert-link"> Information has been saved correctly</a> 
+  </div>
+</div>
+<div class="row ">
+    <div class="col-md-6 mx-auto mt-2">
       <div class="card fond-card">
-        <div class="card-body">
-            <app-beer-card></app-beer-card>
-            <app-beer-card></app-beer-card>
-            <br>
-            <app-beer-card></app-beer-card>
-            <app-beer-card></app-beer-card>
-            <br>
-            <app-beer-card></app-beer-card>
-            <app-beer-card></app-beer-card>
+        <div class="card-body text-center">
+            
+            
         </div>
       </div>
     </div>
   </div>
+
+<div class="row ">
+    <div class="col-md-6 mx-auto mt-2">
+      <div class="card fond-card">
+        <div class="card-body text-center">
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer1">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer1"></app-beer-card>
+                  </div>
+            </div>
+
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer2">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer2"></app-beer-card>
+                  </div>
+            </div>
+            <br>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer3">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer3"></app-beer-card>
+                  </div>
+            </div>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer4">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer4"></app-beer-card>
+                  </div>
+            </div>
+            <br>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer5">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer5"></app-beer-card>
+                  </div>
+            </div>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer6">
+                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="beer6"></app-beer-card>
+                  </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row ">
+      <div class="col-md-6 mx-auto mt-2">
+        <div class="card fond-card">
+          <div class="card-body text-center">
+              
+              <div class="card border-warning mb-3" style="max-width: 20rem;">
+                  <div class="card-header">Header</div>
+                  <div class="card-body">
+                    <h4 class="card-title">Warning card title</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  </div>
+                </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row ">
+        <div class="col-md-6 mx-auto mt-2">
+          <div class="card fond-card">
+            <div class="card-body text-center">
+                <h1 class="text-center"></h1>
+              <form (submit)="onSubmitLogin($event)">
+                <div class="form-group">
+                    <input type="text" name="textFinal1" id="textFinal1" [(ngModel)]="textFinal1" class="form-control">
+                </div>
+                <div class="form-group">
+                  <input type="text" name="textFinal2" id="textFinal2" [(ngModel)]="textFinal2" class="form-control">
+                </div>
+                <input type="submit" value="Check values" class="tn btn-secondary disabled">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row ">
+          <div class="col-md-6 mx-auto mt-2">
+            <div class="card fond-card">
+              <div class="card-body text-center">
+                  
+                  <button type="button" class="btn btn-primary btn-block bnt.lg" (click)="onSubmitData()">  SAVE   DATA  </button>
+              </div>
+            </div>
+          </div>
+        </div>
 
 
