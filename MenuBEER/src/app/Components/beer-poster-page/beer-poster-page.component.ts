@@ -8,9 +8,9 @@ import { Beer, Banner, FinalData } from '../../Serializers/BeerSerializer';
   styleUrls: ['./beer-poster-page.component.css']
 })
 export class BeerPosterPageComponent implements OnInit {
-  private waitRes: Boolean;
-  private messageErrorPopup: Boolean;
-  private messageSavePopup: Boolean;
+  public waitRes: Boolean;
+  public messageErrorPopup: Boolean;
+  public messageSavePopup: Boolean;
 
   public beersTotal: Beer[] = [];
   public beersTotalDown: Beer[] = [];
@@ -25,10 +25,6 @@ export class BeerPosterPageComponent implements OnInit {
 
   public finalText1: string;
   public finalText2: string;
-
-  public action: string = "cover";
-
-
 
   constructor(private dataBeerService : DataBeerService,) { 
     this.waitRes = false;
@@ -65,20 +61,19 @@ export class BeerPosterPageComponent implements OnInit {
     
   }
 
-  onClickBeerImage(){
+  onClickBeerImage(event : any){
     for (let _i = 0; _i < this.imageName.length; _i++) {
       this.imageName[_i]=("./assets/images/Beers/"+this.selectedBeers[_i]+".png");
     }
     return;
   }
 
-  onClickBeerDownImage(){
+  onClickBeerDownImage(event : any){
     this.imageNameDown = "./assets/images/BeersDown/"+this.selectedBeerDown+".png";
     return;
   }
 
-  onClickBannerImage(){
-    this.action = "cover";
+  onClickBannerImage(event : any){
     for (let _i = 0; _i < this.bannersTotal.length; _i++){
       if(this.selectedBanner==this.bannersTotal[_i].Name){
         this.finalText1=this.bannersTotal[_i].Text1;
