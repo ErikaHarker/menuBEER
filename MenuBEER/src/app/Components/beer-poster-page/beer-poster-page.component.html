@@ -118,21 +118,23 @@
 </div>
 
 <div class="row ">
-  <div class="col-md-6 mx-auto text-center" [style.background]="'url(../../../assets/images/BeerBannersDown/'+selectedBanner+'.png)'"
-                                [style.background-size]= "action">
+  <div class="col-md-6 mx-auto text-center" [style.background]="'url(../../../assets/images/BeerBannersDown/'+selectedBanner+'.png)'">
       <select class="selector_color" [(ngModel)]="selectedBanner" (change)="onClickBannerImage($event.target.value)" >
           <option *ngFor="let b of bannersTotal">{{b.Name}}</option>
       </select>
       <div class="card-body text-right">
         <div class="right text-center" >
+            <br>
                 <div class="form-group">
                     <input type="text" value="{{finalText1}}" name="finalText1" id="finalText1" maxlength="50"
                     [(ngModel)]="finalText1" class="form-control">
                 </div>
+                <br>
                 <div class="form-group">
                   <input type="text" value="{{finalText2}}" name="finalText2" id="finalText2" maxlength="50"
                   [(ngModel)]="finalText2" class="form-control">
                 </div>
+              <br>
               <br>
         </div>
           
