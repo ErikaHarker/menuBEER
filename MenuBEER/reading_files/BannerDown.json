@@ -1,0 +1,15 @@
+{
+    "banners":
+    [
+        {
+            "Name": "Banner1",
+            "Text1": "Text Banne 1",
+            "Text2": "Text Banne 1 down"
+        },
+        {
+            "Name": "Banner2",
+            "Text1": "Text Banne 2",
+            "Text2": "Text Banne 2 down"
+        }
+    ]
+}

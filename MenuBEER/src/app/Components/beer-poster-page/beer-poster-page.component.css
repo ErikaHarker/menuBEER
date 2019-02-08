@@ -1,3 +1,39 @@
 .main_div{
-    background-image: url("../../../assets/images/BEER_BG.png");
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG.png");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.selector_color{
+    background-color: #3d2c1b;
+    color: #ffffff;
+}
+.upBanner_div{
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG_UpBanner.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.beerA_div{
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG_SectionABeer.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.beerB_div{
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG_SectionBBeer.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.beerC_div{
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG_SectionCBeer.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+.down_div{
+    background-image: url("../../../assets/images/BackgroundBeer/BEER_BG_Down.jpg");
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.right{
+    float: right;
 }

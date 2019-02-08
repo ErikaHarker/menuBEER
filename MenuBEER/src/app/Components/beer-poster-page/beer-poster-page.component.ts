@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataBeerService} from '../../Services/data-beer.service';
-import { Beer } from '../../Serializers/BeerSerializer';
+import { Beer, Banner, FinalData } from '../../Serializers/BeerSerializer';
 
 @Component({
   selector: 'app-beer-poster-page',
@@ -13,9 +13,22 @@ export class BeerPosterPageComponent implements OnInit {
   private messageSavePopup: Boolean;
 
   public beersTotal: Beer[] = [];
+  public beersTotalDown: Beer[] = [];
   public imageName: string[] = [];
   public selectedBeers: string[] = [];
+  public bannersTotal: Banner[] = [];
   public totalBeer = 6;
+  public selectedBeerDown: string;
+  public imageNameDown: string;
+  public selectedBanner: string;
+  public imageNameBanner: string;
+
+  public finalText1: string;
+  public finalText2: string;
+
+  public action: string = "cover";
+
+
 
   constructor(private dataBeerService : DataBeerService,) { 
     this.waitRes = false;
@@ -33,16 +46,49 @@ export class BeerPosterPageComponent implements OnInit {
       this.selectedBeers.push(this.beersTotal[0].BeerName);
       this.imageName.push("./assets/images/Beers/"+this.selectedBeers[_i]+".png");
     }
+
+    let bd = this.dataBeerService.getJSONDown();
+    bd.forEach(element => {
+      this.beersTotalDown.push(element);
+    });
+
+    this.selectedBeerDown = this.beersTotalDown[0].BeerName;
+    this.imageNameDown = "./assets/images/BeersDown/"+this.selectedBeerDown+".png";
+
+    let bn = this.dataBeerService.getJSONBanner();
+    bn.forEach(element => {
+      this.bannersTotal.push(element);
+    });
+    this.selectedBanner = this.bannersTotal[0].Name;
+    this.finalText1=this.bannersTotal[0].Text1;
+    this.finalText2=this.bannersTotal[0].Text2;
     
   }
 
   onClickBeerImage(){
     for (let _i = 0; _i < this.imageName.length; _i++) {
-      this.imageName[_i]=("./assets/images/Beers/"+this.selectedBeers[_i]+".jpg");
+      this.imageName[_i]=("./assets/images/Beers/"+this.selectedBeers[_i]+".png");
     }
     return;
   }
 
+  onClickBeerDownImage(){
+    this.imageNameDown = "./assets/images/BeersDown/"+this.selectedBeerDown+".png";
+    return;
+  }
+
+  onClickBannerImage(){
+    this.action = "cover";
+    for (let _i = 0; _i < this.bannersTotal.length; _i++){
+      if(this.selectedBanner==this.bannersTotal[_i].Name){
+        this.finalText1=this.bannersTotal[_i].Text1;
+        this.finalText2=this.bannersTotal[_i].Text2;
+        break;
+      }
+    }
+    this.imageNameBanner = "./assets/images/BeersDown/"+this.selectedBanner+".png";
+    return;
+  }
   onSubmitData(){
 
       let beersData: Beer[] = [];
@@ -57,11 +103,28 @@ export class BeerPosterPageComponent implements OnInit {
         beersData.push(b);
       }
 
-      console.log(beersData)
+      let beerDownData: Beer;
+      for (let _i = 0; _i < this.beersTotalDown.length; _i++){
+        if(this.selectedBeerDown==this.beersTotalDown[_i].BeerName){
+          beerDownData=this.beersTotalDown[_i];
+          break;
+        }
+      }
+
+      let banner: Banner = {"Name": this.selectedBanner,
+                            "Text1": this.finalText1,
+                            "Text2": this.finalText2};
+
+      let finalData: FinalData= { "BeerMain": beersData,
+                                  "BeerDown": beerDownData,
+                                  "Banner": banner};
+
+      console.log(finalData)
       this.messageErrorPopup = false;
       this.waitRes = true;
       this.messageSavePopup = false;
-      this.dataBeerService.newData(beersData)
+
+      this.dataBeerService.newData(finalData)
         .then((res)=> {
 
           this.waitRes = false;
@@ -71,8 +134,6 @@ export class BeerPosterPageComponent implements OnInit {
           this.messageSavePopup = false;
           this.waitRes = false;
           this.messageErrorPopup = true;
-          /*this.flashMessage.show(err.message, 
-            {cssClass: 'alert-danger', timeout: 10000});*/
       });
       
   }

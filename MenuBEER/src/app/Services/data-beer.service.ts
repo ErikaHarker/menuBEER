@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
-import * as data from '../../../reading_files/BeersMainMenu.json';
-import { Beer } from '../Serializers/BeerSerializer';
+import * as dataBeer from '../../../reading_files/BeersMainMenu.json';
+import * as dataBeerDown from '../../../reading_files/BeersDown.json';
+import * as dataBanner from '../../../reading_files/BannerDown.json';
+import { FinalData } from '../Serializers/BeerSerializer';
 
 @Injectable({
   providedIn: 'root'
@@ -13,10 +15,18 @@ export class DataBeerService {
   }
 
   public getJSON(){
-    return data.beers;
+    return dataBeer.beers;
   }
 
-  newData( b: Beer[]){
+  public getJSONDown(){
+    return dataBeerDown.beers;
+  }
+
+  public getJSONBanner(){
+    return dataBanner.banners;
+  }
+
+  newData( b: FinalData){
     let headers = {
       'Content-Type':  'application/json'
     }

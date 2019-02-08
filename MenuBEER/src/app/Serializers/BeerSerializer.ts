@@ -4,9 +4,13 @@ export interface Beer {
     "Alcohol": string;
     "price": string;
 }
-export interface finalData {
-    "BeerMain": Beer;
-    "BeerDown": Beer;
+export interface Banner {
+    "Name": string;
     "Text1": string;
     "Text2": string;
+}
+export interface FinalData {
+    "BeerMain": Beer[];
+    "BeerDown": Beer;
+    "Banner": Banner;
 }
