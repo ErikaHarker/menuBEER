@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
-import * as data from '../../../reading_files/Beers.json';
-import { Beer } from '../Serializers/Beer';
+import * as data from '../../../reading_files/BeersMainMenu.json';
+import { Beer } from '../Serializers/BeerSerializer';
 
 @Injectable({
   providedIn: 'root'

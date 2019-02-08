@@ -1,0 +1,47 @@
+{
+    "beers":
+    [
+        {
+            "BeerName": "Poker",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1000"
+        },
+        {
+            "BeerName": "Aguila light",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1500"
+        },
+        {
+            "BeerName": "ClubColombia",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1000"
+        },
+        {
+            "BeerName": "BBC",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1500"
+        },
+        {
+            "BeerName": "Corona",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1000"
+        },
+        {
+            "BeerName": "Heineken",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1500"
+        },
+        {
+            "BeerName": "Sol",
+            "Descripcion": "Pale Ale",
+            "Alcohol": "5",
+            "price": "1500"
+        }
+    ]
+}

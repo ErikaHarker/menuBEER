@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataBeerService} from '../../../Services/data-beer.service';
-import { Beer } from '../../../Serializers/Beer';
+import { Beer } from '../../../Serializers/BeerSerializer';
 import { BeerPosterPageComponent } from '../beer-poster-page.component';
 import { Observable } from 'rxjs';
 
@@ -12,23 +12,14 @@ import { Observable } from 'rxjs';
 })
 export class BeerCardComponent implements OnInit {
  
-  public imageName: any;
+  
   @Input() beerName: string;
+  @Input() imageName: string;
 
   constructor(
     private dataBeerService : DataBeerService,
-  ) { 
-    this.imageName = "./assets/images/Beers/Poker.jpg";
-  }
+  ) { }
 
-  ngOnInit() {
-    this.imageName = "./assets/images/Beers/"+this.beerName+".jpg";
-  }
-
-  onClickBeerImage(){
-    this.imageName = "./assets/images/Beers/"+this.beerName+".jpg";
-  }
-
-
+  ngOnInit() { }
 
 }

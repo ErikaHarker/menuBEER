@@ -1,3 +1,4 @@
+
 <div class="row ">
   <div class="alert alert-dismissible alert-info" *ngIf="waitRes">
     <strong>Waiting</strong> <a class="alert-link">Waiting for a response from the server</a>
@@ -9,8 +10,9 @@
     <strong>Data save!</strong> <a  class="alert-link"> Information has been saved correctly</a> 
   </div>
 </div>
+<div class="col-md-8 mx-auto main_div">
 <div class="row ">
-    <div class="col-md-6 mx-auto mt-2">
+    <div class="col-md-8 mx-auto mt-2">
       <div class="card fond-card">
         <div class="card-body text-center">
             
@@ -21,80 +23,77 @@
   </div>
 
 <div class="row ">
-    <div class="col-md-6 mx-auto mt-2">
-      <div class="card fond-card">
+    <div class="col-md-8 mx-auto">
         <div class="card-body text-center">
             <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                <div class="card border-primary" style="max-width: 15rem;">
                     <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer1">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        <select class="custom-select" [(ngModel)]="selectedBeers[0]" (change)="onClickBeerImage($event.target.value)" >
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
                         </select>
                       </div>
-                      <app-beer-card [beerName]="beer1"></app-beer-card>
-                  </div>
-            </div>
-
-            <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
-                    <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer2">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
-                        </select>
-                      </div>
-                      <app-beer-card [beerName]="beer2"></app-beer-card>
-                  </div>
-            </div>
-            <br>
-            <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
-                    <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer3">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
-                        </select>
-                      </div>
-                      <app-beer-card [beerName]="beer3"></app-beer-card>
+                      <app-beer-card [beerName]="selectedBeers[0]" [imageName]="imageName[0]"></app-beer-card>
                   </div>
             </div>
             <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                <div class="card border-primary" style="max-width: 15rem;">
                     <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer4">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        <select class="custom-select" (change)="onClickBeerImage($event.target.value)" [(ngModel)]="selectedBeers[1]">
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
                         </select>
                       </div>
-                      <app-beer-card [beerName]="beer4"></app-beer-card>
+                      <app-beer-card [beerName]="selectedBeers[1]" [imageName]="imageName[1]"></app-beer-card>
                   </div>
             </div>
             <br>
             <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                <div class="card border-primary" style="max-width: 15rem;">
                     <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer5">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        <select class="custom-select" (change)="onClickBeerImage($event.target.value)" [(ngModel)]="selectedBeers[2]">
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
                         </select>
                       </div>
-                      <app-beer-card [beerName]="beer5"></app-beer-card>
+                      <app-beer-card [beerName]="selectedBeers[2]" [imageName]="imageName[2]"></app-beer-card>
                   </div>
             </div>
             <div class="btn" data-container="body" data-toggle="popover">
-                <div class="card border-primary mb-3" style="max-width: 15rem;">
+                <div class="card border-primary" style="max-width: 15rem;">
                     <div class="form-group">
-                        <select class="custom-select" (click)="onClickBeerImage()" [(ngModel)]="beer6">
-                          <option *ngFor="let b of beers">{{b.name}}</option>
+                        <select class="custom-select" (change)="onClickBeerImage($event.target.value)" [(ngModel)]="selectedBeers[3]">
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
                         </select>
                       </div>
-                      <app-beer-card [beerName]="beer6"></app-beer-card>
+                      <app-beer-card [beerName]="selectedBeers[3]" [imageName]="imageName[3]"></app-beer-card>
+                  </div>
+            </div>
+            <br>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (change)="onClickBeerImage($event.target.value)" [(ngModel)]="selectedBeers[4]">
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="selectedBeers[4]" [imageName]="imageName[4]"></app-beer-card>
+                  </div>
+            </div>
+            <div class="btn" data-container="body" data-toggle="popover">
+                <div class="card border-primary" style="max-width: 15rem;">
+                    <div class="form-group">
+                        <select class="custom-select" (change)="onClickBeerImage($event.target.value)"  [(ngModel)]="selectedBeers[5]">
+                          <option *ngFor="let b of beersTotal">{{b.BeerName}}</option>
+                        </select>
+                      </div>
+                      <app-beer-card [beerName]="selectedBeers[5]" [imageName]="imageName[5]"></app-beer-card>
                   </div>
             </div>
         </div>
-      </div>
     </div>
   </div>
 
   <div class="row ">
-      <div class="col-md-6 mx-auto mt-2">
-        <div class="card fond-card">
+      <div class="col-md-8 mx-auto">
+        <div class="card">
           <div class="card-body text-center">
               
               <div class="card border-warning mb-3" style="max-width: 20rem;">
@@ -110,32 +109,29 @@
     </div>
 
     <div class="row ">
-        <div class="col-md-6 mx-auto mt-2">
+        <div class="col-md-8 mx-auto">
           <div class="card fond-card">
             <div class="card-body text-center">
                 <h1 class="text-center"></h1>
               <form (submit)="onSubmitLogin($event)">
                 <div class="form-group">
-                    <input type="text" name="textFinal1" id="textFinal1" [(ngModel)]="textFinal1" class="form-control">
+                    <input type="text" name="finalText1" id="finalText1" [(ngModel)]="finalText1" class="form-control">
                 </div>
                 <div class="form-group">
-                  <input type="text" name="textFinal2" id="textFinal2" [(ngModel)]="textFinal2" class="form-control">
+                  <input type="text" name="finalText2" id="finalText2" [(ngModel)]="finalText2" class="form-control">
                 </div>
-                <input type="submit" value="Check values" class="tn btn-secondary disabled">
+                <input type="submit" value="Save Text" class="tn btn-secondary disabled">
               </form>
             </div>
           </div>
         </div>
       </div>
-
+    </div>
       <div class="row ">
-          <div class="col-md-6 mx-auto mt-2">
-            <div class="card fond-card">
+          <div class="col-md-8 mx-auto mt-2">
               <div class="card-body text-center">
-                  
                   <button type="button" class="btn btn-primary btn-block bnt.lg" (click)="onSubmitData()">  SAVE   DATA  </button>
               </div>
-            </div>
           </div>
         </div>
 
