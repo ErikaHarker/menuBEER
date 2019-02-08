@@ -40,7 +40,6 @@
                       <app-beer-card [beerName]="selectedBeers[1]" [imageName]="imageName[1]"></app-beer-card>
                   </div>
             </div>
-            <hr size="5" width="70%" noshade>
           </div>
     </div>
 </div>
@@ -69,7 +68,6 @@
                   </div>
             </div>
           </div>
-          <hr size="5" width="70%" noshade>
     </div>
 </div>
 
@@ -118,7 +116,7 @@
 </div>
 
 <div class="row ">
-  <div class="col-md-6 mx-auto text-center" [style.background]="'url(../../../assets/images/BeerBannersDown/'+selectedBanner+'.png)'">
+  <div class="col-md-6 mx-auto text-center" [style.background]="'url('+imageNameBanner+')'">
       <select class="selector_color" [(ngModel)]="selectedBanner" (change)="onClickBannerImage($event.target.value)" >
           <option *ngFor="let b of bannersTotal">{{b.Name}}</option>
       </select>

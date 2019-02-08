@@ -58,6 +58,7 @@ export class BeerPosterPageComponent implements OnInit {
     this.selectedBanner = this.bannersTotal[0].Name;
     this.finalText1=this.bannersTotal[0].Text1;
     this.finalText2=this.bannersTotal[0].Text2;
+    this.imageNameBanner = "../../../assets/images/BeerBannersDown/"+ this.selectedBanner +".png";
     
   }
 
@@ -81,7 +82,7 @@ export class BeerPosterPageComponent implements OnInit {
         break;
       }
     }
-    this.imageNameBanner = "./assets/images/BeersDown/"+this.selectedBanner+".png";
+    this.imageNameBanner = "../../../assets/images/BeerBannersDown/"+ this.selectedBanner +".png";
     return;
   }
   onSubmitData(){
