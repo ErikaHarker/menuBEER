@@ -14,6 +14,7 @@ import { NavBarComponent } from './Components/nav-bar/nav-bar.component';
 import { NotFoundPageComponent } from './Components/not-found-page/not-found-page.component';
 import { BeerPosterPageComponent } from './Components/beer-poster-page/beer-poster-page.component';
 import { BeerCardComponent } from './Components/beer-poster-page/beer-card/beer-card.component';
+import { BeerCardDownComponent } from './Components/beer-poster-page/beer-card-down/beer-card-down.component';
 
 const routes: Route[] = [];
 
@@ -24,7 +25,8 @@ const routes: Route[] = [];
     NavBarComponent,
     NotFoundPageComponent,
     BeerPosterPageComponent,
-    BeerCardComponent
+    BeerCardComponent,
+    BeerCardDownComponent
   ],
   imports: [
     BrowserModule,

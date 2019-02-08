@@ -108,7 +108,7 @@
                         <option *ngFor="let b of beersTotalDown">{{b.BeerName}}</option>
                       </select>
                     </div>
-                    <app-beer-card [beerName]="selectedBeerDown" [imageName]="imageNameDown"></app-beer-card>
+                    <app-beer-card-down [beerName]="selectedBeerDown" [imageName]="imageNameDown"></app-beer-card-down>
                 </div>
           </div>
         </div>
@@ -116,7 +116,7 @@
 </div>
 
 <div class="row ">
-  <div class="col-md-6 mx-auto text-center" [style.background]="'url('+imageNameBanner+')'">
+  <div class="col-md-6 mx-auto text-center" [ngStyle]="{'background-image':'url(' +imageNameBanner+ ')'}">
       <select class="selector_color" [(ngModel)]="selectedBanner" (change)="onClickBannerImage($event.target.value)" >
           <option *ngFor="let b of bannersTotal">{{b.Name}}</option>
       </select>
