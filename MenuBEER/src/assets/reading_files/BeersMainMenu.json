@@ -3,50 +3,38 @@
     [
         {
             "BeerName": "Magic Hat No 9",
-            "Descripcion": "Pale Ale",
+            "Description": "Pale Ale",
             "Alcohol": "5.1",
             "price": "7"
         },
         {
             "BeerName": "Concrete Beach",
-            "Descripcion": "Pilsner",
+            "Description": "Pilsner",
             "Alcohol": "5.2",
             "price": "8"
         },
         {
             "BeerName": "New Belgium",
-            "Descripcion": "Amber",
+            "Description": "Amber",
             "Alcohol": "5.2",
             "price": "7"
         },
         {
             "BeerName": "Lagunitas IPA",
-            "Descripcion": "IPA",
+            "Description": "IPA",
             "Alcohol": "6.2",
             "price": "8"
         },
         {
-            "BeerName": "Dogfish Head",
-            "Descripcion": "Double IPA",
-            "Alcohol": "9.0",
-            "price": "10"
-        },
-        {
-            "BeerName": "J Wakefield",
-            "Descripcion": "Brown Ale",
-            "Alcohol": "7.0",
-            "price": "8"
-        },
-        {
-            "BeerName": "Wynwood",
-            "Descripcion": "Porter",
-            "Alcohol": "6.2",
-            "price": "9"
-        },
-        {
-            "BeerName": "Yuengling",
-            "Descripcion": "Larger",
+            "BeerName": "Cigar City",
+            "Description": "Porter",
             "Alcohol": "5.2",
+            "price": "7"
+        },
+        {
+            "BeerName": "Cafe Quindio",
+            "Description": "Larguer",
+            "Alcohol": "6.2",
             "price": "8"
         }
     ]

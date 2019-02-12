@@ -3,26 +3,20 @@
     [
         {
             "BeerName": "Cigar City",
-            "Descripcion": "Honey Cream Ale",
+            "Description": "Honey Cream Ale",
             "Alcohol": "7.00",
             "price": "9"
         },
         {
             "BeerName": "Angry Orchard",
-            "Descripcion": "Apple Cider",
+            "Description": "Apple Cider",
             "Alcohol": "5.0",
             "price": "8"
         },
         {
             "BeerName": "Sea Dog",
-            "Descripcion": "Blueberry Wheat Ale",
+            "Description": "Blueberry Wheat Ale",
             "Alcohol": "4.7",
-            "price": "8"
-        },
-        {
-            "BeerName": "Yuengling",
-            "Descripcion": "Larger",
-            "Alcohol": "5.2",
             "price": "8"
         }
     ]

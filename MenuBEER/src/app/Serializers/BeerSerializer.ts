@@ -1,10 +1,10 @@
 export interface Beer {
     "BeerName": string;
-    "Descripcion": string;
+    "Description": string;
     "Alcohol": string;
     "price": string;
 }
-export interface Banner {
+export interface Footer {
     "Name": string;
     "Title": string;
     "Text1": string;
@@ -13,5 +13,5 @@ export interface Banner {
 export interface FinalData {
     "BeerMain": Beer[];
     "BeerDown": Beer;
-    "Banner": Banner;
+    "Footer": Footer;
 }

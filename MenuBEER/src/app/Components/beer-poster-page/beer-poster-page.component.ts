@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataBeerService} from '../../Services/data-beer.service';
-import { Beer, Banner, FinalData } from '../../Serializers/BeerSerializer';
+import { Beer, Footer, FinalData } from '../../Serializers/BeerSerializer';
 
 @Component({
   selector: 'app-beer-poster-page',
@@ -16,7 +16,7 @@ export class BeerPosterPageComponent implements OnInit {
   public beersTotalDown: Beer[] = [];
   public imageName: string[] = [];
   public selectedBeers: string[] = [];
-  public bannersTotal: Banner[] = [];
+  public bannersTotal: Footer[] = [];
   public totalBeer = 6;
   public selectedBeerDown: string;
   public imageNameDown: string;
@@ -60,7 +60,7 @@ export class BeerPosterPageComponent implements OnInit {
     this.title = this.bannersTotal[0].Title;
     this.finalText1=this.bannersTotal[0].Text1;
     this.finalText2=this.bannersTotal[0].Text2;
-    this.imageNameBanner = "./assets/images/BeerBannersDown/"+ this.selectedBanner +".png";
+    this.imageNameBanner = "./assets/images/BeerFooters/"+ this.selectedBanner +".png";
     
   }
 
@@ -77,15 +77,15 @@ export class BeerPosterPageComponent implements OnInit {
   }
 
   onClickBannerImage(event : any){
-    for (let _i = 0; _i < this.bannersTotal.length; _i++){
+    /*for (let _i = 0; _i < this.bannersTotal.length; _i++){
       if(this.selectedBanner==this.bannersTotal[_i].Name){
         this.title= this.bannersTotal[_i].Title;
         this.finalText1=this.bannersTotal[_i].Text1;
         this.finalText2=this.bannersTotal[_i].Text2;
         break;
       }
-    }
-    this.imageNameBanner = "./assets/images/BeerBannersDown/"+ this.selectedBanner +".png";
+    }*/
+    this.imageNameBanner = "./assets/images/BeerFooters/"+ this.selectedBanner +".png";
     return;
   }
   onSubmitData(){
@@ -110,14 +110,14 @@ export class BeerPosterPageComponent implements OnInit {
         }
       }
 
-      let banner: Banner = {"Name": this.selectedBanner,
+      let banner: Footer = {"Name": this.selectedBanner,
                             "Title": this.title,
                             "Text1": this.finalText1,
                             "Text2": this.finalText2};
 
       let finalData: FinalData= { "BeerMain": beersData,
                                   "BeerDown": beerDownData,
-                                  "Banner": banner};
+                                  "Footer": banner};
 
       console.log(finalData)
       this.messageErrorPopup = false;

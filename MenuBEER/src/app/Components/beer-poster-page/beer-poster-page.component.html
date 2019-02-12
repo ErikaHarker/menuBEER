@@ -116,13 +116,12 @@
 </div>
 
 <div class="row ">
-  <div class="col-md-6 mx-auto text-center" [ngStyle]="{'background-image':'url(' +imageNameBanner+ ')'}">
+  <div class="col-md-6 mx-auto text-center footer_div" [ngStyle]="{'background-image':'url(' +imageNameBanner+ ')'}">
       <select class="selector_color" [(ngModel)]="selectedBanner" (change)="onClickBannerImage($event.target.value)" >
           <option *ngFor="let b of bannersTotal">{{b.Name}}</option>
       </select>
       <div class="card-body text-right">
         <div class="right text-center" >
-            <br>
                 <div class="form-group">
                   <input type="text" value="{{title}}" name="title" id="title" maxlength="50"
                   [(ngModel)]="title" class="form-control">
@@ -131,12 +130,10 @@
                     <input type="text" value="{{finalText1}}" name="finalText1" id="finalText1" maxlength="50"
                     [(ngModel)]="finalText1" class="form-control">
                 </div>
-                <br>
                 <div class="form-group">
                   <input type="text" value="{{finalText2}}" name="finalText2" id="finalText2" maxlength="50"
                   [(ngModel)]="finalText2" class="form-control">
                 </div>
-              <br>
               <br>
         </div>
           
@@ -149,6 +146,18 @@
     <div class="card-body text-center">
       <button type="button" class="btn btn-primary btn-block bnt.lg" (click)="onSubmitData()">  SAVE   DATA  </button>
     </div>
+  </div>
+</div>
+
+<div class="row ">
+  <div class="alert alert-dismissible alert-info" *ngIf="waitRes">
+    <strong>Waiting</strong> <a class="alert-link">Waiting for a response from the server</a>
+  </div>
+  <div class="alert alert-dismissible alert-primary" *ngIf="messageErrorPopup">
+    <strong>Oh snap!</strong> <a  class="alert-link">Change a few things up</a> and try submitting again.
+  </div>
+  <div class="alert alert-dismissible alert-success" *ngIf="messageSavePopup">
+    <strong>Data save!</strong> <a  class="alert-link"> Information has been saved correctly</a> 
   </div>
 </div>
 

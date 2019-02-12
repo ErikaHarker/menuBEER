@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
 import * as dataBeer from '../../assets/reading_files/BeersMainMenu.json';
 import * as dataBeerDown from '../../assets/reading_files/BeersDown.json';
-import * as dataBanner from '../../assets/reading_files/BannerDown.json';
-import * as dataOuput from '../../assets/reading_files/BeersOuput.json';
+import * as dataBanner from '../../assets/reading_files/Footers.json';
 import { Beer, FinalData } from '../Serializers/BeerSerializer';
 //import { thenWriteJson } from 'then-write-json';
 
@@ -15,7 +14,7 @@ export class DataBeerService {
   public values: string[] = [];
   public values2: string[] = [];
   constructor(private httpClient: HttpClient) {
-    this.server = '/api/BeerDataPoster/';
+    this.server = 'http://192.168.1.176:8000/api/BeerDataPoster/';
   }
 
   public getJSON(){
@@ -27,7 +26,7 @@ export class DataBeerService {
   }
 
   public getJSONBanner(){
-    return dataBanner.banners;
+    return dataBanner.Footers;
   }
 
   newData( b: FinalData){
@@ -36,6 +35,13 @@ export class DataBeerService {
     }
 
     return new Promise((resolve, reject)=>{
+      let headers = {
+        //'Access-Control-Allow-Origin': 'http://localhost',
+        //'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
+        //'Access-Control-Allow-Headers': 'X-Requested-With,content-type',
+        //'Access-Control-Allow-Credentials': "true" 
+      };
+
       this.httpClient.post(this.server, b, {headers: headers, responseType: 'text'}).subscribe(
         res => resolve(res),
         err => reject(err)
