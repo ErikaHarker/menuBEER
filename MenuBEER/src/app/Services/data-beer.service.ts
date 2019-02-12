@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'; 
-import * as dataBeer from '../../../reading_files/BeersMainMenu.json';
-import * as dataBeerDown from '../../../reading_files/BeersDown.json';
-import * as dataBanner from '../../../reading_files/BannerDown.json';
-import { FinalData } from '../Serializers/BeerSerializer';
+import * as dataBeer from '../../assets/reading_files/BeersMainMenu.json';
+import * as dataBeerDown from '../../assets/reading_files/BeersDown.json';
+import * as dataBanner from '../../assets/reading_files/BannerDown.json';
+import * as dataOuput from '../../assets/reading_files/BeersOuput.json';
+import { Beer, FinalData } from '../Serializers/BeerSerializer';
+//import { thenWriteJson } from 'then-write-json';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataBeerService {
   public server : string;
+  public values: string[] = [];
+  public values2: string[] = [];
   constructor(private httpClient: HttpClient) {
-    this.server = 'http://127.0.0.1:8000/';
+    this.server = '/api/BeerDataPoster/';
   }
 
   public getJSON(){

@@ -1,7 +1,11 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
     "outDir": "../out-tsc/app",
+    "sourceMap": true,
+    "declaration": false,
+
     "types": []
   },
   "exclude": [

@@ -124,6 +124,10 @@
         <div class="right text-center" >
             <br>
                 <div class="form-group">
+                  <input type="text" value="{{title}}" name="title" id="title" maxlength="50"
+                  [(ngModel)]="title" class="form-control">
+                </div>
+                <div class="form-group">
                     <input type="text" value="{{finalText1}}" name="finalText1" id="finalText1" maxlength="50"
                     [(ngModel)]="finalText1" class="form-control">
                 </div>

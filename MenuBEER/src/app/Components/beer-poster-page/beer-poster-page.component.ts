@@ -23,6 +23,7 @@ export class BeerPosterPageComponent implements OnInit {
   public selectedBanner: string;
   public imageNameBanner: string;
 
+  public title: string;
   public finalText1: string;
   public finalText2: string;
 
@@ -56,6 +57,7 @@ export class BeerPosterPageComponent implements OnInit {
       this.bannersTotal.push(element);
     });
     this.selectedBanner = this.bannersTotal[0].Name;
+    this.title = this.bannersTotal[0].Title;
     this.finalText1=this.bannersTotal[0].Text1;
     this.finalText2=this.bannersTotal[0].Text2;
     this.imageNameBanner = "./assets/images/BeerBannersDown/"+ this.selectedBanner +".png";
@@ -77,6 +79,7 @@ export class BeerPosterPageComponent implements OnInit {
   onClickBannerImage(event : any){
     for (let _i = 0; _i < this.bannersTotal.length; _i++){
       if(this.selectedBanner==this.bannersTotal[_i].Name){
+        this.title= this.bannersTotal[_i].Title;
         this.finalText1=this.bannersTotal[_i].Text1;
         this.finalText2=this.bannersTotal[_i].Text2;
         break;
@@ -108,6 +111,7 @@ export class BeerPosterPageComponent implements OnInit {
       }
 
       let banner: Banner = {"Name": this.selectedBanner,
+                            "Title": this.title,
                             "Text1": this.finalText1,
                             "Text2": this.finalText2};
 
@@ -127,6 +131,7 @@ export class BeerPosterPageComponent implements OnInit {
           this.messageSavePopup = true;
 
         }).catch( err =>{
+          console.log(err);
           this.messageSavePopup = false;
           this.waitRes = false;
           this.messageErrorPopup = true;

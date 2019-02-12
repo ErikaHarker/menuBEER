@@ -6,6 +6,7 @@ export interface Beer {
 }
 export interface Banner {
     "Name": string;
+    "Title": string;
     "Text1": string;
     "Text2": string;
 }
