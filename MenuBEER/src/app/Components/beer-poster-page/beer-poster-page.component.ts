@@ -22,10 +22,14 @@ export class BeerPosterPageComponent implements OnInit {
   public imageNameDown: string;
   public selectedBanner: string;
   public imageNameBanner: string;
+  public positionBanner: string;
 
   public title: string;
   public finalText1: string;
   public finalText2: string;
+
+  public priceInt: string;
+  public priceFloat: string;
 
   constructor(private dataBeerService : DataBeerService,) { 
     this.waitRes = false;
@@ -60,6 +64,7 @@ export class BeerPosterPageComponent implements OnInit {
     this.title = this.bannersTotal[0].Title;
     this.finalText1=this.bannersTotal[0].Text1;
     this.finalText2=this.bannersTotal[0].Text2;
+    this.positionBanner = this.bannersTotal[0].position;
     this.imageNameBanner = "./assets/images/BeerFooters/"+ this.selectedBanner +".png";
     
   }
@@ -77,16 +82,21 @@ export class BeerPosterPageComponent implements OnInit {
   }
 
   onClickBannerImage(event : any){
-    /*for (let _i = 0; _i < this.bannersTotal.length; _i++){
+    for (let _i = 0; _i < this.bannersTotal.length; _i++){
       if(this.selectedBanner==this.bannersTotal[_i].Name){
-        this.title= this.bannersTotal[_i].Title;
-        this.finalText1=this.bannersTotal[_i].Text1;
-        this.finalText2=this.bannersTotal[_i].Text2;
+        //this.title= this.bannersTotal[_i].Title;
+        //this.finalText1=this.bannersTotal[_i].Text1;
+        //this.finalText2=this.bannersTotal[_i].Text2;
+        this.positionBanner=this.bannersTotal[_i].position;
         break;
       }
-    }*/
+    }
     this.imageNameBanner = "./assets/images/BeerFooters/"+ this.selectedBanner +".png";
     return;
+  }
+
+  onClickBeerPrice(event: any){
+    this.finalText2 = ""+this.priceInt+"."+this.priceFloat;
   }
   onSubmitData(){
 
@@ -113,7 +123,8 @@ export class BeerPosterPageComponent implements OnInit {
       let banner: Footer = {"Name": this.selectedBanner,
                             "Title": this.title,
                             "Text1": this.finalText1,
-                            "Text2": this.finalText2};
+                            "Text2": this.finalText2,
+                            "position": this.positionBanner};
 
       let finalData: FinalData= { "BeerMain": beersData,
                                   "BeerDown": beerDownData,

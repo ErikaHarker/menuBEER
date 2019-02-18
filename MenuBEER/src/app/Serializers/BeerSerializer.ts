@@ -9,6 +9,7 @@ export interface Footer {
     "Title": string;
     "Text1": string;
     "Text2": string;
+    "position": string;
 }
 export interface FinalData {
     "BeerMain": Beer[];

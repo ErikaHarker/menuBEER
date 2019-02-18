@@ -5,13 +5,15 @@
             "Name": "Footer1",
             "Title": "",
             "Text1": "",
-            "Text2": ""
+            "Text2": "",
+            "position": "right"
         },
         {
             "Name": "Footer2",
             "Title": "",
             "Text1": "",
-            "Text2": ""
+            "Text2": "",
+            "position": "left"
         }
     ]
 }
