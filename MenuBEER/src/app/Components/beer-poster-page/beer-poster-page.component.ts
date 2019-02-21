@@ -27,6 +27,7 @@ export class BeerPosterPageComponent implements OnInit {
   public title: string;
   public finalText1: string;
   public finalText2: string;
+  public finalText3: string;
 
   public priceInt: string;
   public priceFloat: string;
@@ -64,6 +65,7 @@ export class BeerPosterPageComponent implements OnInit {
     this.title = this.bannersTotal[0].Title;
     this.finalText1=this.bannersTotal[0].Text1;
     this.finalText2=this.bannersTotal[0].Text2;
+    this.finalText3=this.bannersTotal[0].Text3;
     this.positionBanner = this.bannersTotal[0].position;
     this.imageNameBanner = "./assets/images/BeerFooters/"+ this.selectedBanner +".png";
     
@@ -96,7 +98,7 @@ export class BeerPosterPageComponent implements OnInit {
   }
 
   onClickBeerPrice(event: any){
-    this.finalText2 = ""+this.priceInt+"."+this.priceFloat;
+    this.finalText3 = ""+this.priceInt+"."+this.priceFloat;
   }
   onSubmitData(){
 
@@ -124,6 +126,7 @@ export class BeerPosterPageComponent implements OnInit {
                             "Title": this.title,
                             "Text1": this.finalText1,
                             "Text2": this.finalText2,
+                            "Text3": this.finalText3,
                             "position": this.positionBanner};
 
       let finalData: FinalData= { "BeerMain": beersData,

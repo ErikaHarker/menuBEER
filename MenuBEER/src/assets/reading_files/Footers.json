@@ -6,6 +6,7 @@
             "Title": "",
             "Text1": "",
             "Text2": "",
+            "Text3": "",
             "position": "right"
         },
         {
@@ -13,7 +14,8 @@
             "Title": "",
             "Text1": "",
             "Text2": "",
-            "position": "left"
+            "Text3": "",
+            "position": "right"
         }
     ]
 }
